@@ -1,0 +1,36 @@
+{% load static %}
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kalyb</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+<header id="#header">
+    <nav>
+        <div class="logo">Kalyb</div>
+
+        <ul>
+            <li><a href="{% url 'home' %}" class="">home</a></li>
+            <li><a href="#about" class="">about</a></li>
+            <li><a href="#portfolio" class="">portfolio</a></li>
+            <li><a href="#contact" class="">contact</a></li>
+            <li><a href="https://www.linkedin.com/in/kalyb-sanders-a7872b237/"><img src="{% static 'img/linkedin-circled-30.png' %}"></a></li>
+            <li><a href="https://github.com/KalybSanders"><img src="{% static 'img/github-30.png' %}"></a></li>
+        </ul>
+
+        <!-- <img src="{% static 'img/arrow.svg' %}" class="" onclick="" /> -->
+    </nav>
+
+    <div class="header-text">
+        <p>Web Developer</p>
+        <h1>Hello, I'm <span>Kalyb Sanders</span> <br>  From Georgia.</h1>
+    </div>
+
+</header>
+
+</body>
