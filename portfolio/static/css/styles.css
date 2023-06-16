@@ -1,0 +1,585 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(0,0,15);
+    background: linear-gradient(0deg, rgba(0,0,15,1) 0%, rgba(38,18,0,1) 100%);
+    color:#fff;
+}
+
+.container {
+    padding: 10px 10%;
+}
+
+header {
+
+    height: 100vh;
+    background-image: url('../img/coffee_shop_programming.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    /* align-items: center; */
+    transition: 0.5s;
+    padding: 40px 50px;
+    z-index: 100000;
+
+    /* flex-wrap: wrap; */
+
+}
+
+nav .logo {
+    position: relative;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+
+    flex: 1;
+}
+
+nav ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.5s;
+}
+
+nav ul li {
+    position: relative;
+    list-style: none;
+
+}
+
+nav ul li a {
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
+
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    /* background: #6ac5c7; */
+    background: #ca6500;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav.sticky {
+    /* padding: 10px 100px; */
+    /* background: rgb(255, 255, 255); */
+    /* background: rgba(0, 0, 0, 0.274); */
+    background: rgb(99,38,0);
+background: linear-gradient(0deg, rgba(99,38,0,0.7031630170316301) 0%, rgba(0,0,0,0.75) 50%, rgba(124,63,0,0.85) 100%);
+
+    /* background: rgb(99,38,0);
+    background: linear-gradient(0deg, rgba(99,38,0,0.75) 0%, rgba(124,63,0,0.8175182481751825) 100%); */
+}
+
+nav.sticky ul li a,
+nav.sticky .logo {
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    /* color: #3b1c0a; */
+}
+
+.header-text {
+    font-size: 30px;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    padding: 5vh 0 5vh 4vw;  /* top right bottom left */
+    background: rgba(0, 0, 0, 0.801);
+}
+
+.header-text span {
+    color: #ca6500;
+}
+
+/*
+
+    About Section CSS
+
+*/
+
+#about {
+    padding: 120px 0;
+    color: #ababab;
+    position: relative;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.about-col-2 p {
+    font-size: 24px;
+}
+
+.about-col-3 {
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+    font-size: 48px;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ca6500;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+
+}
+
+.tab-links.active-link::after {
+    width: 100%;
+
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+.tab-contents ul li span {
+    color: #6ac5c7;
+    font-size: 20px;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+/*
+
+    Portfolio Section CSS
+
+*/
+
+#works {
+    padding: 100px 0;
+}
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 0.5fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer {
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(rgba(0,0,0,0.5), #ca6500);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.layer a {
+    margin-top: 20px;
+    color: #ca6500;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.work:hover img {
+    transform: scale(1.1);
+}
+
+.work:hover .layer {
+    height: 100%;
+}
+
+.btn {
+    display: block;
+    margin: 50px auto; /* top&bottom  left&right*/
+    width: fit-content;
+    border: 1px solid #ca6500;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: #ca6500;
+
+}
+
+
+/*
+
+    Contact Me Section CSS
+
+*/
+
+#contact {
+
+}
+
+.contact-left {
+    flex-basis: 35%;
+}
+
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-left p {
+    margin-top: 30px;
+}
+
+.contact-left p img {
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.contact-right ul {
+    list-style: none;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+}
+
+.btn.btn2 {
+    display: inline-block;
+    background: #ca6500;
+}
+
+.contact-right form {
+    width: 100%;
+
+}
+
+form input,
+form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+    resize: none;
+}
+
+form .btn2 {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+/* Technologies Card */
+
+.card-container {
+    display: flex;
+    justify-content: start;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: fit-content;
+    background-color: brown;
+    color: black;
+    margin-right: 5px;
+
+
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 brown;
+}
+
+.card::after {
+    content: '';
+    width: 0;
+    height: 0;
+    background: gray;
+    position: relative;
+    left:0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+.card:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+.cont {
+    padding: 2px 16px;
+}
+
+/*
+    CSS For Small Screen
+*/
+
+nav .menu-icon {
+    display: none;
+}
+
+.menu-icon {
+    transform: rotate(-90deg);
+    transition: 0.5s;
+}
+
+.menu-icon:hover {
+    transition: 0.5s;
+    transform: rotate(0deg);
+
+}
+
+.menu-icon:active {
+    background-color: white;
+}
+
+.menu-icon:active::after {
+    height: 1000px;
+    width: 100%;
+}
+
+ @media only screen and (max-width: 600px) {
+    #header {
+        background-image: url('../img/coffee_shop_programming.jpg');
+        background-size: 10%;
+    }
+
+    /* .header-text {
+        margin-top: 100%;
+        font-size: 16px;
+
+        right: -50px;
+        top: -50px;
+    } */
+
+    .header-text h1 {
+        font-size: 30px;
+    }
+
+    nav .menu-close {
+        display: block;
+    }
+
+    nav .menu-open {
+        display: block;
+    }
+
+    nav ul {
+        background: white;
+        position: fixed;
+        top: -110vh;
+        right: 0px;
+        width: 200px;
+        height: 110vh;
+        padding-top: 10px;
+        z-index: 2;
+        transition: top 0.5s;
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+
+    nav ul li a {
+        display: block;
+        margin: 25px;
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+    }
+
+    nav ul img {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    nav {
+        padding: 20px 25px;
+    }
+
+    nav.sticky {
+        padding: 20px 20px;
+        background: rgb(255, 255, 255);
+        /* background: rgba(0, 0, 0, 0.274); */
+    }
+
+    nav.sticky ul li a,
+    nav.sticky .logo {
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+        /* color: #3b1c0a; */
+    }
+
+    /* .sticky {
+        display: none;
+    } */
+ }
+
+/* Tooltip Settings */
+
+/* .tooltip {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    border: 1px solid #ddd;
+
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+     visibility: hidden;
+     width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position: absolute;
+    z-index: 1;
+
+}
+
+.tooltip:hover {
+    visibility: visible;
+}
+ */
