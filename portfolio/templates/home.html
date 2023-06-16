@@ -11,6 +11,7 @@
 <body>
 
 <header id="#header">
+
     <nav>
         <div class="logo">Kalyb</div>
 
@@ -22,8 +23,6 @@
             <li><a href="https://www.linkedin.com/in/kalyb-sanders-a7872b237/"><img src="{% static 'img/linkedin-circled-30.png' %}"></a></li>
             <li><a href="https://github.com/KalybSanders"><img src="{% static 'img/github-30.png' %}"></a></li>
         </ul>
-
-        <!-- <img src="{% static 'img/arrow.svg' %}" class="" onclick="" /> -->
     </nav>
 
     <div class="header-text">
@@ -35,7 +34,6 @@
 
 <!-- About Section -->
 <div id="about">
-
     <div class="container">
 
         <div class="row">
@@ -45,7 +43,9 @@
             </div>
 
             <div class="about-col-2">
+
                 <h1 class="sub-title">About Me</h1>
+
                 <p>Hi, I'm Kalyb Sanders. I'm a web developer who crafts solutions best suited for you. </p>
 
                 <div class="tab-titles">
@@ -83,7 +83,6 @@
         </div>
 
     </div>
-
 </div>
 
 <!-- Works Section -->
@@ -105,5 +104,57 @@
         </div>
     </div>
 </div>
+
+<!-- Contact Me Section -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p>isanders.kalyb@gmail.com</p>
+                <p>(404) 388-3382</p>
+                <p>Fayetteville, Georgia</p>
+                <p></p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/kalyb-sanders-a7872b237/"><img src="{% static 'img/linkedin-circled-30.png' %}"></a>
+                    <a href="https://github.com/KalybSanders"><img src="{% static 'img/github-30.png' %}"></a>
+                </div>
+                <a href="{% static 'img/my-cv.pdf' %}" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form action="contact" name="contactForm" method="POST">
+                    {% csrf_token %}
+                    <ul>
+                        <li><input type="text" name="fullName" id="fullName" placeholder="Full Name" required/></li>
+                        <li><input type="tel" name="phone" id="phone" placeholder="Phone Number (ex. 123-456-7890)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/></li>
+                        <li><input type="email" name="email" id="email" placeholder="Email" required/></li>
+                        <li><textarea type="text" name="message" id="message" placeholder="Message contents..." height="1000px" required></textarea></li>
+                        <li><input type="submit" value="Submit" class="btn btn2"/></li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>Copyright © Kalyb Sanders.</p>
+    </div>
+</div>
+
+<script>
+    var tabLinks = document.getElementsByClassName("tab-links");
+    var tabContents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabName) {
+        for(tabLink of tabLinks) {
+            tabLink.classList.remove("active-link")
+        }
+        for(tabContent of tabContents) {
+            tabContent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabName).classList.add("active-tab")
+    }
+</script>
 
 </body>
