@@ -13,7 +13,7 @@
 <header id="#header">
 
     <nav>
-        <div class="logo">Kalyb</div>
+        <div class="logo">Kalyb Sanders</div>
 
         <ul>
             <li><a href="{% url 'home' %}" class="">home</a></li>
@@ -27,7 +27,7 @@
 
     <div class="header-text">
         <p>Web Developer</p>
-        <h1>Hello, I'm <span>Kalyb Sanders</span> <br>  From Georgia.</h1>
+        <h1>Hello, I'm <span>Kalyb Sanders</span></h1>
     </div>
 
 </header>
@@ -49,9 +49,9 @@
                 <p>Hi, I'm Kalyb Sanders. I'm a web developer who crafts solutions best suited for you. </p>
 
                 <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="">Education</p>
-                    <p class="tab-links" onclick="">Skills</p>
-                    <p class="tab-links" onclick="">Experience</p>
+                    <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onClick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
                 </div>
 
                 <div class="tab-contents active-tab" id="education">
